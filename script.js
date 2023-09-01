@@ -18,7 +18,6 @@ http.onload = function () {
     let output = "";
 
     let varCheck = [];
-    let i = 2;
     
    
       for (let item in news) {
