@@ -8,10 +8,14 @@
     <meta property="twitter:description" content="Good News still exist" />
     <link rel="preload" href="/news.json" as="fetch" crossorigin="anonymous">
     <link rel="preload" href="script.js" as="script" />
-    
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
+
     <link rel="stylesheet" href="./styles/normalize.css" />
     <link rel="stylesheet" href="./styles/index.css" />
-    
+    <script src="https://kit.fontawesome.com/86e920b6e3.js" crossorigin="anonymous"></script>
     <title>Good News</title>
   </head>
   <body>
@@ -27,8 +31,14 @@
       </nav>
       <div class="articles">
         <div class="articles--main"></div>
+        <div class="btns">
+          <button><i class="fa-solid fa-arrow-left btn-left" onClick="clickHandle(-1)"></i></button>
+          <button><i class="fa-solid fa-arrow-right btn-right" onClick="clickHandle(1)"></i></button>
+        </div>
         <div class="other--styling">
-          <div class="articles--other"></div>
+         
+            <div class="articles--other"></div>
+         
         </div>
       </div>
       <div class="aside">
@@ -44,7 +54,7 @@
         </ul>
       </footer>
      
-    <script src="script.js"></>
+    <script src="script.js"></script>
     <script src="hot-news.js"></script>
 
   </body>
