@@ -3,7 +3,7 @@
 let http = new XMLHttpRequest();
 
 //prepare request
-http.open("get", "news.json", true);
+http.open("get", "/public/news.json", true);
 
 //send request
 http.send();
