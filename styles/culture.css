@@ -9,7 +9,7 @@ body {
 }
 
 .main{
-    width: 90%;
+    width: 78%;
     display: grid;
     grid-template-areas: 
     "title title title title"
@@ -17,7 +17,7 @@ body {
     "articles articles articles article"
     "footer footer footer footer";
     grid-template-rows: 1fr 1fr 10fr 1fr;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr;
 }
 
 
@@ -38,6 +38,7 @@ body {
     max-height: 40px;
     height: 100%;
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 ul{
@@ -67,4 +68,45 @@ footer{
 
 .footer__ul{
     width: 18%;
+}
+
+
+/*ARTICLES*/
+.culture__body{
+    width: 80%;
+    border: 2px darkcyan solid;
+    justify-self: center;
+    margin-top: 40px;
+}
+
+.culture__articles{
+    
+    border: 2px solid purple;
+    margin: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    margin: 10px 10px;
+   
+    
+
+}
+
+.culture__articles__container{
+    
+    border: 2px solid firebrick;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.culture__articles__pic{
+    display: blocK;
+    width: 300px;
+    height: 230px;
+    object-fit: cover;
+    
+
 }

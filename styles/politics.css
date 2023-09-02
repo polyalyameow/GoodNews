@@ -1,0 +1,22 @@
+
+@import "/styles/culture.css";
+
+.politics__body{
+    width: 80%;
+    border: 2px darkcyan solid;
+    justify-self: center;
+    margin-top: 40px;
+}
+
+.politics__articles{
+    
+    border: 2px solid purple;
+    margin: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    margin: 10px 10px;
+   
+    
+
+}

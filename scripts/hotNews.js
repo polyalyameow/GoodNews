@@ -21,7 +21,7 @@ function showDivs(n) {
 
 
 window.onload = function fetchData() {
-  fetch("/public/hot-news.json")
+  fetch("/public/hotNews.json")
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
