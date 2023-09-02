@@ -114,6 +114,7 @@ ul{
     display: blocK;
     width: 300px;
     height: 230px;
+    object-fit: cover;
     
 
 }
@@ -125,6 +126,10 @@ ul{
     border: 2px pink solid;
     width: 380px;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
