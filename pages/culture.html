@@ -6,13 +6,12 @@
     <meta name="description" content="Good News still exist" />
     <meta property="og:description" content="Good News still exist" />
     <meta property="twitter:description" content="Good News still exist" />
-    <link rel="preload" href="/news.json" as="fetch" crossorigin="anonymous">
-    <link rel="preload" href="script.js" as="script" />
-
-    <link rel="stylesheet" href="./styles/normalize.css" />
-    <link rel="stylesheet" href="./styles/index.css" />
+    <!-- <link rel="preload" href="/news.json" as="fetch" crossorigin="anonymous">
+    <link rel="preload" href="script.js" as="script" /> -->
+    <link rel="stylesheet" href="../styles/normalize.css" />
+    <link rel="stylesheet" type="text/css"href="../styles/culture.css" />
     <script src="https://kit.fontawesome.com/86e920b6e3.js" crossorigin="anonymous"></script>
-    <title>Good News</title>
+    <title>Good News Culture</title>
   </head>
   <body>
     <div class="main">
@@ -25,22 +24,8 @@
           <li><a href="#">health</a></li>
         </ul>
       </nav>
-      <div class="articles">
-        <div class="articles--main"></div>
-        <div class="btns">
-          <button><i class="fa-solid fa-arrow-left btn-left" onClick="clickHandle(-1)"></i></button>
-          <button><i class="fa-solid fa-arrow-right btn-right" onClick="clickHandle(1)"></i></button>
-        </div>
-        <div class="other--styling">
-         
-            <div class="articles--other"></div>
-         
-        </div>
-      </div>
-      <div class="aside">
-        <img class="aside__pic" />
-        <p class="aside__caption"></p>
-        <p class="aside__text"></p>
+      <div class="culture__articles">
+
       </div>
       <footer class="footer">
         <ul class="footer__ul">
@@ -49,9 +34,6 @@
           <li><a href="#">mail</a></li>
         </ul>
       </footer>
-      
-    <script src="/scripts//news.js"></script>
-    <script src="/scripts/testimonials.js"></script>
-    <script src="/scripts/hot-news.js"></script>
+      <script src="/scripts/culture.js"></script>
   </body>
 </html>

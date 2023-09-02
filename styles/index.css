@@ -48,6 +48,7 @@ ul{
 
 .main__ul{
     width: 60%;
+    padding: 0;
 }
 
 .articles{
@@ -141,7 +142,7 @@ ul{
 }
 
 
-
+/*FOOTER*/
 footer{
     grid-area: footer;
     border: 2px olivedrab solid;
