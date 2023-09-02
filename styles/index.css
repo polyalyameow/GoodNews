@@ -9,7 +9,7 @@ body {
 }
 
 .main{
-    width: 90%;
+    width: 78%;
     display: grid;
     grid-template-areas: 
     "title title title title"
@@ -17,7 +17,7 @@ body {
     "articles articles articles aside"
     "footer footer footer footer";
     grid-template-rows: 1fr 1fr 10fr 1fr;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 2fr 2fr;
 }
 
 .main__title{
@@ -59,6 +59,8 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 2px solid orchid;
+
     
 }
 

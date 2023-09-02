@@ -17,8 +17,9 @@ body {
     "articles articles articles article"
     "footer footer footer footer";
     grid-template-rows: 1fr 1fr 10fr 1fr;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 2fr 2fr;
 }
+
 
 .main__title{
     grid-area: title;
