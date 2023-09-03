@@ -42,10 +42,19 @@ window.onload = function fetchData() {
       newsCulture.push(newsAll[news]);
       
       document.getElementById('culture').onclick = e => {
-        console.log(e.target.textContent)
+        
         console.log(newsCulture) // array for data with culture-hashtag
+        for (cult in newsCulture) {
+         if (e.target.parentNode.children[1].textContent == newsCulture[cult]["title"]){
+          console.log(newsCulture[cult]) //object 
+          console.log(newsCulture[cult]["source"])
+         } else {
+          console.log("not found")
+         }
+          
+        }
         x = e.target.parentNode;
-        console.log(x) // print out div of targeted el
+        // console.log(x) // print out div of targeted el
         xTitle = x.querySelector(".culture__articles__title").textContent;
         
         
