@@ -1,3 +1,44 @@
 body{
     background-color: aqua;
 }
+
+body{
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+    
+}
+
+.showArticle{
+    width: 60%;
+    border: 2px solid thistle;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.showArticle__image{
+    width: 300px;
+    object-fit: cover;
+}
+
+.showArticle__text{
+    width: 60%;
+}
+
+.showArticle-btn{
+    width: 250px;
+    height: 250px;
+    background-color: yellow;
+    color: black;
+}

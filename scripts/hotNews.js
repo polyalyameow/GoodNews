@@ -8,9 +8,12 @@ let clickedLeft = false;
 
 function clickHandle(n){
     showDivs(myIndex += n);
+    
 }
 
 function showDivs(n) {
+  console.log(x);
+  console.log(x.length)
     if (n > x.length) {myIndex = 1}
     if (n < 1) {myIndex = x.length}
     for (i = 0; i < x.length; i++) {
@@ -20,7 +23,7 @@ function showDivs(n) {
   }
 
 
-window.onload = function fetchData() {
+window.onload = function hotNews() {
   fetch("/public/hotNews.json")
     .then((res) => res.json())
     .then((data) => {
@@ -28,7 +31,7 @@ window.onload = function fetchData() {
       let output = "";
       
       
-      for (item in data) {
+      for (let item in data) {
         console.log(data);
         
 

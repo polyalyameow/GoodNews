@@ -65,7 +65,6 @@ ul{
 }
 
 .articles--main{
-    grid-area: main;
     border: 2px red solid;
     width: 100%;
     max-height: 800px;
