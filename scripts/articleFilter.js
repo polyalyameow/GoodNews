@@ -1,7 +1,10 @@
 
 
 
+
+
 window.onload = function fetchData() {
+
   Promise.all([fetch("../public/hotNews.json"), fetch("../public/news.json")])
     .then((res) => {
       return Promise.all(res.map((res) => res.json()));
@@ -10,25 +13,26 @@ window.onload = function fetchData() {
       console.log(data);
       const currentUrl =  window.location.pathname;
       let output = "";
-      let openedArticle = "";
+      let openedArticle="";
+      
       let myIndex = 0;
       // console.log(data)
       // console.log(data.length)
       let newsAll = [];
       // array with all values in one place is needed bc otherwise the loop skips first three indexes of the second array with 34 values in it
       let newsCulture = []
-
- 
-      for (item in data[myIndex]) {
+    
+      for (let item in data[myIndex]) {
         // console.log(data[myIndex][item]);
         newsAll.push(data[myIndex][item]);
       }
-      for (item in data[myIndex + 1]) {
+      for (let item in data[myIndex + 1]) {
         newsAll.push(data[myIndex + 1][item]);
       }
-
+      
       console.log(newsAll);
-      for (news in newsAll) {
+      for (let news in newsAll) {
+        
        if (newsAll[news]["hashtag"] === "culture" && currentUrl === "/pages/culture.html"){
         output += `
         <div class="culture__articles" id="culture">
@@ -44,18 +48,35 @@ window.onload = function fetchData() {
       document.getElementById('culture').onclick = e => {
         
         console.log(newsCulture) // array for data with culture-hashtag
-        for (cult in newsCulture) {
+        for (let cult in newsCulture) {
          if (e.target.parentNode.children[1].textContent == newsCulture[cult]["title"]){
           console.log(newsCulture[cult]) //object 
-          console.log(newsCulture[cult]["source"])
+          let author = newsCulture[cult]["author"]
+          // console.log(author)
+
+          function openArt(){
+            openedArticle+= `
+            <div class="article__articles">
+              <img class="article__image" src=${newsCulture[cult].image}/>
+              <p class="article__author" id="author">${newsCulture[cult].author}</p>
+              <h2 class="article__title">${newsCulture[cult].title}</h2>
+              <p class="article__text">${newsCulture[cult].text}</p>
+              <p class="article__source">${newsCulture[cult].source}</p>
+            </div>
+        `;
+          }
+          
+          openArt()
+          
+          window.location.replace ("../pages/openedArticle.html")
          } else {
           console.log("not found")
          }
           
         }
-        x = e.target.parentNode;
+        //  x = e.target.parentNode;
         // console.log(x) // print out div of targeted el
-        xTitle = x.querySelector(".culture__articles__title").textContent;
+        //  xTitle = x.querySelector(".culture__articles__title").textContent;
         
         
         //  window.location.replace ("../pages/openedArticle.html");
@@ -112,7 +133,7 @@ window.onload = function fetchData() {
 
      
       
-      for (news in newsAll) {
+      for (let news in newsAll) {
           if (currentUrl === "/pages/culture.html") {
             document.querySelector(".culture__articles").innerHTML = output;
             
@@ -123,13 +144,19 @@ window.onload = function fetchData() {
        } else if (currentUrl === "/pages/health.html") {
         document.querySelector(".health__articles").innerHTML = output;
      }
-
-    
+     
+     
       }
-    
-    });
+
+      
+      });
+      
     
     
 };
+
+
+
+
 
 
