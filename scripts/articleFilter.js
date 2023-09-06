@@ -1,24 +1,5 @@
 
 
-// const chosen = document.getElementById("culture-body")
-
-// export const pressedTarget = []
-
-// const chosenPressed = e => {
-//   pressedTarget.push(e.target.parentNode.children[1].textContent);
-//   console.log(pressedTarget)
-//   window.open("../pages/openedArticle.html")
-// }
-
-
-let chosenArt = document.getElementById("culture").addEventListener("click", (e) => console.log(e.target.parentNode.children[1].classList.add("red"))) 
-
-export let array=[]
-let collection = document.getElementsByClassName("red")
-array.push(collection)
-console.log(array)
-
-
 // console.log(targetedArt)
 
           // if (t.matches('red')){

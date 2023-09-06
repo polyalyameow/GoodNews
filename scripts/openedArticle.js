@@ -1,13 +1,15 @@
-import {array} from "./articleFilter.js"
+
 
 let myIndex = 0;
-let x;
+
 let page = ""
 
 
 let id;
 
-console.log(array)
+let x = window.localStorage.getItem("main-titel")
+console.log(x)
+// console.log(window.localStorage.length)
 
 
 
@@ -19,7 +21,7 @@ window.onload = function openedArticle(){
     })
     .then((data) => {
         console.log(data)
-        console.log(targetedArt)
+        
         let newsAll = [];
         for (let item in data[myIndex]) {
             // console.log(data[myIndex][item]);
