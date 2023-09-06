@@ -1,22 +1,22 @@
-body{
-    background-color: aqua;
-}
 
 body{
+    background-image: url(/images/asset/background-good-news.jpg);
+    background-size: cover;
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     
     
     
 }
 
 .showArticle{
+    margin-top: 10%;  
+    background-color: orange;
     width: 60%;
     border: 2px solid thistle;
     border-radius: 5px;
@@ -24,6 +24,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 5%;
     
 }
 
