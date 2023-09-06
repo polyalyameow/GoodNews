@@ -9,7 +9,7 @@ http.open("get", "/public/news.json", true);
 http.send();
 
 //catch response
-http.onload = function () {
+http.onload = function News () {
   //check ready state and status properties
   if (this.readyState == 4 && this.status == 200) {
     //convert json data to js array if response is ok
@@ -40,11 +40,13 @@ http.onload = function () {
                   `;
           
                 }
+
         document.querySelector(".articles--other").innerHTML = output;
       
       
     }
       console.log(varCheck);
+      
     }
       
       

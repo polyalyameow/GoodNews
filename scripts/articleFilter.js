@@ -1,13 +1,29 @@
 
-let show = document.getElementsByClassName("showArticle");
-let btn = document.getElementById("myBtn");
-let span = document.getElementsByClassName("close")[0];
-function closeMod() {
-          
-document.querySelector(".modal").style.display = "none";}
-         
-            
 
+// const chosen = document.getElementById("culture-body")
+
+// export const pressedTarget = []
+
+// const chosenPressed = e => {
+//   pressedTarget.push(e.target.parentNode.children[1].textContent);
+//   console.log(pressedTarget)
+//   window.open("../pages/openedArticle.html")
+// }
+
+
+let chosenArt = document.getElementById("culture").addEventListener("click", (e) => console.log(e.target.parentNode.children[1].classList.add("red"))) 
+
+export let array=[]
+let collection = document.getElementsByClassName("red")
+array.push(collection)
+console.log(array)
+
+
+// console.log(targetedArt)
+
+          // if (t.matches('red')){
+          //   console.log("contains")
+          // }
 
 
 window.onload = function fetchData() {
@@ -17,18 +33,22 @@ window.onload = function fetchData() {
     })
     .then((data) => {
       console.log(data);
+
       const currentUrl = window.location.pathname;
       let result = "";
 
       let modalText = "";
 
       let myIndex = 0;
+     
 
       // array with all values in one place is needed bc otherwise the loop skips first three indexes of the second array with 34 values in it
       let newsAll = [];
       let newsCulture = [];
+      
       console.log(newsCulture);
-
+      
+    
       for (let item in data[myIndex]) {
         // console.log(data[myIndex][item]);
         newsAll.push(data[myIndex][item]);
@@ -38,24 +58,57 @@ window.onload = function fetchData() {
       }
 
       console.log(newsAll);
+      
+
       for (let news in newsAll) {
         newsCulture.push(newsAll[news]);
+        
 
         if (
           newsAll[news]["hashtag"] === "culture" &&
           currentUrl === "/pages/culture.html"
         ) {
+          
           result += `
         <div class="culture__articles" id="culture">
+            <a href="${'../pages/openedArticle.html'}" target="${'_blank'}">
             <div class="culture__articles__container" id="culture-container">
               <img  src="${newsAll[news].image}" alt="${newsAll[news].alt}" class="culture__articles__pic" />
-                <h2 class="culture__articles__title">${newsAll[news].title}</h2>
+                <h2 class="culture__articles__title" id="culture-title">${newsAll[news].title}</h2>
                 <p class="culture__articles__description">${newsAll[news].description}</p>
-          </div>
+            </div>
+            </a>
         </div>
     `;
+    
+    // const collection = document.getElementsByTagName("h2");
+    // const element = collection.namedItem("culture");
+    // let text = element.innerHTML;
+    // console.log(text)
+    // console.log(collection)
+   
 
+    // document.body.appendChild(div);
+    // href="${'../pages/openedArticle/' + newsAll[news].id + '.html'}"
+            // document.getElementById("culture").addEventListener("click", chosenPressed)
+
+
+          //   document.getElementById("culture").addEventListener('click', e =>{ 
+          //     // console.log(e.target.parentNode.children[1])
+               
+          //         if  (e.target.parentNode.children[1].textContent === newsAll[news]["title"]){
+          //           console.log(newsAll[news]["id"])
+                    
+          //           // window.open("../pages/openedArticle.html")
+                  
+                  
+          //   }
+           
+            
+          // });
+              
           
+         
         } else if (
           newsAll[news]["hashtag"] === "politics" &&
           currentUrl === "/pages/politics.html"
@@ -105,6 +158,8 @@ window.onload = function fetchData() {
             console.log("button was clicked");
           };
         }
+
+
       }
 
       for (let news in newsAll) {
@@ -118,55 +173,87 @@ window.onload = function fetchData() {
           document.querySelector(".health__articles").innerHTML = result;
         }
       }
-      document.getElementById("culture-body").onmouseup = (e) => {
-        for (let n in newsAll) {
-          if (
-            e.target.parentNode.children[1].textContent === newsAll[n]["title"]
-          ) {
-              modalText += `<div id="myModal" class="modal">
-                <div class="modal-content" id="content-m">
-                  <button class="close" id="closed">&times;</button>
-                  <div class="showArticle">
-                     <img class="showArticle__image" src="${newsAll[n]["image"]}"/>
-                      <p class="showArticle__author" id="author">${"Author: " + newsAll[n]["author"]}</p>
-                      <h2 class="showArticle__title">${newsAll[n]["title"]}</h2>
-                      <p class="showArticle__text">${newsAll[n]["text"]}</p>
-                      <p class="showArticle__source">${"Sourse: " + newsAll[n]["source"]}</p>
-                    </div>
-                  </div>
-             </div>`;
+      
+      
+      //  document.getElementById("culture-body").addEventListener('click', e =>{ 
+      //   console.log(e.target.parentNode);
+      //   for (let n in newsAll) {
+      //   if  (e.target.parentNode.children[1].textContent === newsAll[n]["title"]){
+      //     // console.log(newsAll[n])
+      //     let myJSONString = JSON.stringify(newsAll[n]); 
+      //     test.push(myJSONString)
+          
+        
+          
+      //   }
+        
+        
+        
+    //   }
+      
 
-             document.getElementById("content-m").style.display = "none";
+    // })
+        // 
+        // console.log(document.querySelector(".article__title"))
+        // for (let n in newsAll) {
+        //   if ( e.target.parentNode.children[1].textContent === newsAll[n]["title"]){
+        //   console.log(e.target.parentNode.children[1])
+        //   window.open("../pages/openedArticle.html")
+        //   }
+        //  }
+        
+      }
+      // document.getElementById("culture-body").onmouseup = (e) => {
+      //   for (let n in newsAll) {
+      //     if (
+      //       e.target.parentNode.children[1].textContent === newsAll[n]["title"]
+      //     ) {
+      //         modalText += `
+             
+      //         <div id="myModal" class="modal">
+      //           <div class="modal-content" id="content-m">
+      //             <button class="close" id="closed">&times;</button>
+      //             <div class="showArticle">
+      //                <img class="showArticle__image" src="${newsAll[n]["image"]}"/>
+      //                 <p class="showArticle__author" id="author">${"Author: " + newsAll[n]["author"]}</p>
+      //                 <h2 class="showArticle__title">${newsAll[n]["title"]}</h2>
+      //                 <p class="showArticle__text">${newsAll[n]["text"]}</p>
+      //                 <p class="showArticle__source">${"Sourse: " + newsAll[n]["source"]}</p>
+      //               </div>
+      //             </div>
+      //        </div>`;
 
-            }
+      //        document.querySelector(".modal").style.backgroundColor = "red";
 
-            
+      //       }
+
+           
 
 
            
-            let modal =  document.getElementById("myModal");
+      //       let modal =  document.getElementById("myModal");
 
-          //   span.onclick = function() {
-          //    modal.style.display = "none";
+      //     //   span.onclick = function() {
+      //     //    modal.style.display = "none";
 
-          // }
+      //     // }
 
           
 
 
           
            
-          //  closeMod();
+      //     //  closeMod();
           
 
 
          
 
-          //   let el = document.querySelector(".modal")
-          //   el.scrollTop = el.scrollHeight;
-          //  setTimeout(function(){
-          //   el.scrollTop = 0;
-          // }, 20);
+      //     //   let el = document.querySelector(".modal")
+      //     //   el.scrollTop = el.scrollHeight;
+      //     //  setTimeout(function(){
+      //     //   el.scrollTop = 0;
+      //     // }, 20);
 
 
    
@@ -175,47 +262,49 @@ window.onload = function fetchData() {
             
             
 
-          //function closeMod() {
-            //   document.querySelector(".close").onmouseup = () =>{
-            //     document.querySelector(".modal").style.display = "none";}
-            // }
+      //     //function closeMod() {
+      //       //   document.querySelector(".close").onmouseup = () =>{
+      //       //     document.querySelector(".modal").style.display = "none";}
+      //       // }
             
-            // closeMod();
+      //       // closeMod();
             
-            
-
-            // function scrollToTop(){
-            //   window.scrollTo({top: 0, behavior: 'smooth'});}
             
 
-            
+      //       // function scrollToTop(){
+      //       //   window.scrollTo({top: 0, behavior: 'smooth'});}
             
 
             
             
-          }
+
+            
+            
+      //     }
 
           
 
-          document.querySelector(".modal").innerHTML = modalText;
+      //     document.querySelector(".modal").innerHTML = modalText;
           
 
-          // closeBtn.onclick = function(){
-          //   document.querySelector(".modal").style.display = "none";
-          // }
-        //   function scrollToTop(){
-        //     window.scrollTo({top: 0, behavior: 'smooth'});
-        //  }
-        //  scrollToTop()
+      //     // closeBtn.onclick = function(){
+      //     //   document.querySelector(".modal").style.display = "none";
+      //     // }
+      //   //   function scrollToTop(){
+      //   //     window.scrollTo({top: 0, behavior: 'smooth'});
+      //   //  }
+      //   //  scrollToTop()
   
          
-          // console.log(newsAll[n])
+      //     // console.log(newsAll[n])
           
-        }
+      //   }
 
-          
 
-    }
-    )   
+      
+
+    
+    )  
+    
 }
 
