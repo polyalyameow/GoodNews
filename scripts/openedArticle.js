@@ -7,7 +7,7 @@ let page = ""
 
 let id;
 
-let x = window.localStorage.getItem("main-titel")
+let x = window.localStorage.getItem("hotNValue")
 console.log(x)
 // console.log(window.localStorage.length)
 
@@ -23,6 +23,7 @@ window.onload = function openedArticle(){
         console.log(data)
         
         let newsAll = [];
+        
         for (let item in data[myIndex]) {
             // console.log(data[myIndex][item]);
             newsAll.push(data[myIndex][item]);
@@ -30,8 +31,10 @@ window.onload = function openedArticle(){
           for (let item in data[myIndex + 1]) {
             newsAll.push(data[myIndex + 1][item]);
           }
-    
+          console.log(newsAll)
           for (let n in newsAll){
+            console.log(newsAll[n])
+            console.log(Object.values(newsAll[n]))
             ; // id of an element
             
             // console.log(newsAll[n]) //each el in news array
