@@ -103,6 +103,8 @@ window.onload = function hotNews() {
             let value = res[r][ind];
             console.log(value);
             window.localStorage.setItem("hotNValue", value)
+          } else if (e.target.textContent = ""){
+            console.log("where??")
           }
           else {
             console.log("doesnt include")

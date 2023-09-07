@@ -33,8 +33,33 @@ window.onload = function openedArticle(){
           }
           console.log(newsAll)
           for (let n in newsAll){
-            console.log(newsAll[n])
-            console.log(Object.values(newsAll[n]))
+            // console.log(newsAll[n])
+            const values = (Object.values(newsAll[n])) //array with value
+            // console.log(values)
+            if(values.includes(x)){
+              console.log("here")
+              let findKey = Object.keys(newsAll[n]).find(key => newsAll[n][key] === x);
+              // console.log(findKey)
+              // console.log(findKey, x)
+              if (newsAll[n].hasOwnProperty(findKey) && Object.values(newsAll[n]).includes(x)){
+                let pageRes = newsAll[n]
+                console.log(pageRes);
+
+                page += `
+            <div class="article__articles" id="article">
+                <img class="article__image" src="${pageRes.image}" alt="${pageRes.alt}"/>
+                <p class="article__author" id="author">"${pageRes.author}"</p>
+                <h2 class="article__title">"${pageRes.title}"</h2>
+                <p class="article__text">"${pageRes.text}"</p>
+                <p class="article__source">"${pageRes.source}"</p>
+        </div>`;
+              }
+              
+              
+              
+            } else {
+              "not here"
+            }
             ; // id of an element
             
             // console.log(newsAll[n]) //each el in news array
@@ -50,14 +75,7 @@ window.onload = function openedArticle(){
            
          
             
-            page += `
-            <div class="article__articles" id="article">
-                <img class="article__image" src="${newsAll[n].image}" alt="${newsAll[n].alt}"/>
-                <p class="article__author" id="author">"${newsAll[n].author}"</p>
-                <h2 class="article__title">"${newsAll[n].title}"</h2>
-                <p class="article__text">"${newsAll[n].text}"</p>
-                <p class="article__source">"${newsAll[n].source}"</p>
-        </div>`;
+            
          }
          document.querySelector(".article__articles").innerHTML = page;
     })
