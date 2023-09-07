@@ -44,7 +44,7 @@ window.onload = function hotNews() {
        
         output += `
             <div class="slide"> 
-            <a href="${"../pages/openedArticle.html"}" target="${"_blank"}">
+            <a href="${"../pages/openedArticle.html"}">
             <div class="articles--img">
                 <img src="${data[item].image}" alt="${
           data[item].alt
@@ -103,8 +103,7 @@ window.onload = function hotNews() {
             let value = res[r][ind];
             console.log(value);
             window.localStorage.setItem("hotNValue", value)
-          } else if (e.target.textContent = ""){
-            console.log("where??")
+          
           }
           else {
             console.log("doesnt include")

@@ -42,17 +42,20 @@ window.onload = function openedArticle(){
               // console.log(findKey)
               // console.log(findKey, x)
               if (newsAll[n].hasOwnProperty(findKey) && Object.values(newsAll[n]).includes(x)){
-                let pageRes = newsAll[n]
+                let pageRes = newsAll[n];
                 console.log(pageRes);
 
                 page += `
             <div class="article__articles" id="article">
+                <div class="article__styling">
                 <img class="article__image" src="${pageRes.image}" alt="${pageRes.alt}"/>
-                <p class="article__author" id="author">"${pageRes.author}"</p>
-                <h2 class="article__title">"${pageRes.title}"</h2>
-                <p class="article__text">"${pageRes.text}"</p>
-                <p class="article__source">"${pageRes.source}"</p>
+                <p class="article__author" id="author">Author: ${pageRes.author}</p>
+                <h2 class="article__title">${pageRes.title}</h2>
+                <p class="article__text">${pageRes.text}</p>
+                <p class="article__source">Source: ${pageRes.source}</p>
+               </div>
         </div>`;
+                window.localStorage.removeItem(x)
               }
               
               
