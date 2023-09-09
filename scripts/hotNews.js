@@ -70,13 +70,13 @@ window.onload = function hotNews() {
         arrayVal.push(val)
 
 
-        document.querySelector(".articles--main").onclick = (e) => {
-          if(x.includes(e.target.textContent)){
-            console.log("found: " + e.target.textContent)
-          } else (
-            console.log("not found")
-          )
-         }
+        // document.querySelector(".articles--main").onclick = (e) => {
+        //   if(x.includes(e.target.textContent)){
+        //     console.log("found: " + e.target.textContent)
+        //   } else (
+        //     console.log("not found")
+        //   )
+        //  }
 
 
 

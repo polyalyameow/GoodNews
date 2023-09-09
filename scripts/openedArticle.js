@@ -7,6 +7,8 @@ let page = ""
 
 let id;
 
+
+
 let x = window.localStorage.getItem("hotNValue")
 console.log(x)
 // console.log(window.localStorage.length)
@@ -55,7 +57,9 @@ window.onload = function openedArticle(){
                 <p class="article__source">Source: ${pageRes.source}</p>
                </div>
         </div>`;
-                window.localStorage.removeItem(x)
+                
+              window.localStorage.removeItem(x)
+            
               }
               
               
@@ -80,8 +84,10 @@ window.onload = function openedArticle(){
             
             
          }
+         
          document.querySelector(".article__articles").innerHTML = page;
     })
-
+    
     
 }
+
