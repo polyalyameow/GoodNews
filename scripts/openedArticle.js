@@ -81,10 +81,10 @@ window.onload = function openedArticle(){
             // }
            
          
-            
+            window.localStorage.removeItem(x)
             
          }
-         
+         window.localStorage.removeItem(x)
          document.querySelector(".article__articles").innerHTML = page;
     })
     
