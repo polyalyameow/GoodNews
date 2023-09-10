@@ -102,7 +102,7 @@ window.onload = function hotNews() {
             console.log(ind);
             let value = res[r][ind];
             console.log(value);
-            window.localStorage.setItem("hotNValue", value)
+            window.sessionStorage.setItem("hotNValue", value)
           
           }
           else {

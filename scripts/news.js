@@ -44,7 +44,7 @@ http.onload = function News () {
                   `;
 
                   
-            console.log(news[item]);
+            // console.log(news[item]);
 
             let val = Object.values(news[item])
 
@@ -67,7 +67,7 @@ http.onload = function News () {
                 console.log(ind);
                 let value = res[r][ind];
                 console.log(value);
-                window.localStorage.setItem("newValue", value)
+                window.sessionStorage.setItem("hotNValue",value);
               
               }
               else {

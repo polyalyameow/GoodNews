@@ -9,7 +9,7 @@ let id;
 
 
 
-let x = window.localStorage.getItem("hotNValue")
+let x = window.sessionStorage.getItem("hotNValue")
 console.log(x)
 // console.log(window.localStorage.length)
 
@@ -58,14 +58,14 @@ window.onload = function openedArticle(){
                </div>
         </div>`;
                 
-              window.localStorage.removeItem(x)
+              window.sessionStorage.clear()
             
               }
               
-              
+              window.sessionStorage.clear()
               
             } else {
-              "not here"
+              console.log("not here")
             }
             ; // id of an element
             
@@ -81,10 +81,10 @@ window.onload = function openedArticle(){
             // }
            
          
-            window.localStorage.removeItem(x)
+            // window.sessionStorage.removeItem(x)
             
          }
-         window.localStorage.removeItem(x)
+        //  window.sessionStorage.removeItem(x)
          document.querySelector(".article__articles").innerHTML = page;
     })
     
