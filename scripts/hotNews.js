@@ -52,10 +52,10 @@ window.onload = function hotNews() {
             </div>
              <div class="articles--main__text">
                  <h2 class="articles--main__title">${data[item].title}</h2>
-                 <p class="articles--main__author">${data[item].author}</p>
                  <p class="articles--main__description">${
                    data[item].description
                  }</p>
+                 <p class="articles--main__author">${data[item].author}</p>
              </div>
              </a>
             </div>
