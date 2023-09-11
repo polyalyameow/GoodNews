@@ -1,5 +1,5 @@
 
-
+let x;
 let myIndex = 0;
 
 let page = ""
@@ -9,8 +9,13 @@ let id;
 
 
 
-let x = window.sessionStorage.getItem("hotNValue")
-console.log(x)
+ 
+  x = localStorage.getItem("newsValue");
+  console.log(x)
+ 
+
+
+
 // console.log(window.localStorage.length)
 
 
@@ -56,17 +61,21 @@ window.onload = function openedArticle(){
                 <p class="article__text">${pageRes.text}</p>
                 <p class="article__source">Source: ${pageRes.source}</p>
                </div>
-        </div>`;
+              </div>`;
                 
-              window.sessionStorage.clear()
+              
             
               }
               
-              window.sessionStorage.clear()
+              
               
             } else {
               console.log("not here")
+              console.log(newsAll[n]);
+              console.log(x)
             }
+
+            // window.localStorage.clear();
             ; // id of an element
             
             // console.log(newsAll[n]) //each el in news array
@@ -81,10 +90,10 @@ window.onload = function openedArticle(){
             // }
            
          
-            // window.sessionStorage.removeItem(x)
+            // localStorage.removeItem("hotNValue")
             
          }
-        //  window.sessionStorage.removeItem(x)
+        
          document.querySelector(".article__articles").innerHTML = page;
     })
     

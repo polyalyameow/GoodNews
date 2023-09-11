@@ -9,7 +9,7 @@ async function fetchTestimonials() {
         let output = "";
 
         for (item in data) {
-            console.log(data);
+            // console.log(data);
             
     
               output += `

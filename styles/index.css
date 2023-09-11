@@ -112,6 +112,18 @@ ul{
     
 }
 
+.articles--other__title{
+    border: 1px solid fuchsia;
+    margin: 0;
+    padding-bottom: 20px
+}
+
+.articles--other__description{
+    border: 2px solid green;
+    padding-top: 20px;
+    margin: 0;
+}
+
 .articles--other__pic{
     display: blocK;
     width: 300px;

@@ -1,3 +1,8 @@
+arrayVal = [];
+res =[];
+
+
+
 
 // request to fetch data from json file
 
@@ -43,47 +48,70 @@ http.onload = function News () {
                       </div>
                   `;
 
-                  
+                  //href="${"../pages/openedArticle.html"}"
             // console.log(news[item]);
 
-            let val = Object.values(news[item])
+            let val = Object.values(random_news)
+            console.log(val)
+            arrayVal.push(val) // to be able to access result everywhere in code
+            
 
-            arrayVal.push(val)
-          
+
+
+           
         }
 
+        // console.log(arrayVal)
+
+        // for (v in arrayVal){
+        //   // console.log(arrayVal[v])
+        //   res.push(arrayVal[v])
+        // } 
+        // console.log(res)
+
         console.log(arrayVal)
-        for (v in arrayVal){
-          // console.log(arrayVal[v])
-          res.push(arrayVal[v])
-        } 
 
         document.querySelector(".articles--other").onclick = (e) =>{
-          for (let r = 0; r < res.length; r++ ){
-            console.log(res[r])
-              if(res[r].includes(e.target.textContent)){
+          for (let r = 0; r < arrayVal.length; r++ ){
+            console.log(arrayVal[r]) // 9 res
+            console.log(e.target.value)
+              if (e.target.value === undefined) {
+                console.log(e.target.parentNode.children[0])
+                let imageAdr = e.target.parentNode.children[0].src // returns http://127.0.0.1:5500/images/hot-news--coffee.jpg
+                console.log(imageAdr)
+                let matches = imageAdr.match(/[^/]*$/);
+                let imageName = "/images/" + matches
+                console.log(imageName)
+                if(res[r].includes(imageName)){
+                  console.log("gotcha")
+                  // ind = res[r].indexOf(imageName)
+                  // value = res[r][ind];
+                  value = imageName;
+                  console.log(value);
+                  localStorage.setItem("newsValue", value)
+                }
+              } else if(arrayVal[r].includes(e.target.textContent)){
                 console.log("includes")
-                let ind = res[r].indexOf(e.target.textContent);
+                let ind = arrayVal[r].indexOf(e.target.textContent);
                 console.log(ind);
-                let value = res[r][ind];
+                let value = arrayVal[r][ind];
                 console.log(value);
-                window.sessionStorage.setItem("hotNValue",value);
-              
+                localStorage.setItem("newsValue", value)
               }
-              else {
-                console.log("doesnt include")
-              }
+
             }
     
             
           }
+            
+        
     
 
         document.querySelector(".articles--other").innerHTML = output;
       
       
     }
-      console.log(varCheck);
+      // console.log(varCheck);
       
     }
       

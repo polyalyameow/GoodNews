@@ -39,12 +39,12 @@ window.onload = function hotNews() {
       let output = "";
 
       for (let item in data) {
-        console.log(data);
-        console.log(data[item]);
+        // console.log(data);
+        // console.log(data[item]);
        
         output += `
             <div class="slide"> 
-            <a href="${"../pages/openedArticle.html"}">
+            <a >
             <div class="articles--img">
                 <img src="${data[item].image}" alt="${
           data[item].alt
@@ -63,11 +63,14 @@ window.onload = function hotNews() {
             
      `; 
 
-        console.log(data[item]);
+     // href="${"../pages/openedArticle.html"}"
+
+        // console.log(data[item]);
 
         let val = Object.values(data[item])
-
+        // console.log(val)
         arrayVal.push(val)
+        // console.log(arrayVal)
 
 
         // document.querySelector(".articles--main").onclick = (e) => {
@@ -87,7 +90,7 @@ window.onload = function hotNews() {
 
         //  console.log(data[item].title)
       }
-      console.log(arrayVal)
+      // console.log(arrayVal)
       for (v in arrayVal){
         // console.log(arrayVal[v])
         res.push(arrayVal[v])
@@ -102,11 +105,22 @@ window.onload = function hotNews() {
             console.log(ind);
             let value = res[r][ind];
             console.log(value);
-            window.sessionStorage.setItem("hotNValue", value)
-          
+            localStorage.setItem("hotNValue", value)
           }
-          else {
-            console.log("doesnt include")
+          else if(e.target.textContent == "") {
+            console.log(e.target.parentNode.children[0])
+            let imageAdr = e.target.parentNode.children[0].src // returns http://127.0.0.1:5500/images/hot-news--coffee.jpg
+            let matches = imageAdr.match(/[^/]*$/);
+            let imageName = "/images/" + matches
+            console.log(imageName)
+            if(res[r].includes(imageName)){
+              console.log("gotcha")
+              // ind = res[r].indexOf(imageName)
+              // value = res[r][ind];
+              value = imageName;
+              console.log(value);
+              localStorage.setItem("hotNValue", value)
+            }
           }
         }
 
