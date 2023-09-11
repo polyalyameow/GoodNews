@@ -10,7 +10,7 @@ let id;
 
 
  
-  x = localStorage.getItem("newsValue");
+  x = localStorage.getItem("hotNValue");
   console.log(x)
  
 

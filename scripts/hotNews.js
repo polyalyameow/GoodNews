@@ -44,7 +44,7 @@ window.onload = function hotNews() {
        
         output += `
             <div class="slide"> 
-            <a >
+            <a href="${"../pages/openedArticle.html"}">
             <div class="articles--img">
                 <img src="${data[item].image}" alt="${
           data[item].alt

@@ -88,7 +88,7 @@ http.onload = function News () {
                   // value = res[r][ind];
                   value = imageName;
                   console.log(value);
-                  localStorage.setItem("newsValue", value)
+                  localStorage.setItem("hotNValue", value)
                 }
               } else if(arrayVal[r].includes(e.target.textContent)){
                 console.log("includes")
@@ -96,7 +96,7 @@ http.onload = function News () {
                 console.log(ind);
                 let value = arrayVal[r][ind];
                 console.log(value);
-                localStorage.setItem("newsValue", value)
+                localStorage.setItem("hotNValue", value)
               }
 
             }
