@@ -1,4 +1,5 @@
-
+let arrayVal = [];
+let res = [];
 
 // console.log(targetedArt)
 
@@ -52,7 +53,7 @@ window.onload = function fetchData() {
           
           result += `
         <div class="culture__articles" id="culture">
-            <a href="${'../pages/openedArticle.html'}" target="${'_blank'}">
+            <a /href="${'../pages/openedArticle.html'}">
             <div class="culture__articles__container" id="culture-container">
               <img  src="${newsAll[news].image}" alt="${newsAll[news].alt}" class="culture__articles__pic" />
                 <h2 class="culture__articles__title" id="culture-title">${newsAll[news].title}</h2>
@@ -61,83 +62,211 @@ window.onload = function fetchData() {
             </a>
         </div>
     `;
-    
-    // const collection = document.getElementsByTagName("h2");
-    // const element = collection.namedItem("culture");
-    // let text = element.innerHTML;
-    // console.log(text)
-    // console.log(collection)
-   
-
-    // document.body.appendChild(div);
-    // href="${'../pages/openedArticle/' + newsAll[news].id + '.html'}"
-            // document.getElementById("culture").addEventListener("click", chosenPressed)
+          console.log(newsAll[news])
+          //href="${'../pages/openedArticle.html'}" target="${'_blank'}"
+          let val = Object.values(newsAll[news])
+          console.log(val)
+          arrayVal.push(val) // to be able to access result everywhere in code
 
 
-          //   document.getElementById("culture").addEventListener('click', e =>{ 
-          //     // console.log(e.target.parentNode.children[1])
-               
-          //         if  (e.target.parentNode.children[1].textContent === newsAll[news]["title"]){
-          //           console.log(newsAll[news]["id"])
-                    
-          //           // window.open("../pages/openedArticle.html")
-                  
-                  
-          //   }
-           
-            
-          // });
-              
-          
-         
-        } else if (
+      console.log(arrayVal)
+
+      document.querySelector(".culture__articles").onclick = (e) =>{
+         for (let r = 0; r < arrayVal.length; r++ ){
+          console.log(arrayVal[r]) // 9 res
+          console.log(e.target.textContent)
+          if(arrayVal[r].includes(e.target.textContent)){
+            console.log("includes")
+            let ind = arrayVal[r].indexOf(e.target.textContent);
+            console.log(ind);
+            let value = arrayVal[r][ind];
+            console.log(value);
+            localStorage.setItem("hotNValue", value)
+          }          
+           else if(e.target.textContent == "") {
+              console.log(e.target.parentNode.children[0])
+              let imageAdr = e.target.parentNode.children[0].src // returns http://127.0.0.1:5500/images/hot-news--coffee.jpg
+              let matches = imageAdr.match(/[^/]*$/);
+              let imageName = "/images/" + matches
+              console.log(imageName)
+              if(arrayVal[r].includes(imageName)){
+                console.log("gotcha")
+                // ind = res[r].indexOf(imageName)
+                // value = res[r][ind];
+                let value = imageName;
+                console.log(value);
+                localStorage.setItem("hotNValue", value)
+              }
+          }
+
+          } 
+      }
+         } 
+         else if (
           newsAll[news]["hashtag"] === "politics" &&
           currentUrl === "/pages/politics.html"
         ) {
           console.log(newsAll[news]["title"]);
           result += `
         <div class="politics__articles" id="politics">
+          <a href="${'../pages/openedArticle.html'}">
             <div class="culture__articles__container">
               <img  src="${newsAll[news].image}" alt="${newsAll[news].alt}" class="culture__articles__pic" />
                 <h2 class="culture__articles__title">${newsAll[news].title}</h2>
                 <p class="culture__articles__description">${newsAll[news].description}</p>
           </div>
+          </a>
         </div>
-    `;
-          document.getElementById("politics").onclick = function () {
-            console.log("button was clicked");
-          };
+    `;  
+    let val = Object.values(newsAll[news])
+    console.log(val)
+    arrayVal.push(val) // to be able to access result everywhere in code
+
+
+    console.log(arrayVal)
+
+    document.querySelector(".politics__articles").onclick = (e) =>{
+      for (let r = 0; r < arrayVal.length; r++ ){
+        console.log(arrayVal[r]) // 9 res
+        console.log(e.target.textContent)
+        if(arrayVal[r].includes(e.target.textContent)){
+          console.log("includes")
+          let ind = arrayVal[r].indexOf(e.target.textContent);
+          console.log(ind);
+          let value = arrayVal[r][ind];
+          console.log(value);
+          localStorage.setItem("hotNValue", value)
+        }          
+        else if(e.target.textContent == "") {
+            console.log(e.target.parentNode.children[0])
+            let imageAdr = e.target.parentNode.children[0].src // returns http://127.0.0.1:5500/images/hot-news--coffee.jpg
+            let matches = imageAdr.match(/[^/]*$/);
+            let imageName = "/images/" + matches
+            console.log(imageName)
+            if(arrayVal[r].includes(imageName)){
+              console.log("gotcha")
+              // ind = res[r].indexOf(imageName)
+              // value = res[r][ind];
+              let value = imageName;
+              console.log(value);
+              localStorage.setItem("hotNValue", value)
+            }
+        }
+
+        } 
+}
+          // document.getElementById("politics").onclick = function () {
+          //   console.log("button was clicked");
+          // };
         } else if (
           newsAll[news]["hashtag"] === "world" &&
           currentUrl === "/pages/world.html"
         ) {
           result += `
         <div class="world__articles" id="world">
+          <a href="${'../pages/openedArticle.html'}">
             <div class="culture__articles__container">
               <img  src="${newsAll[news].image}" alt="${newsAll[news].alt}" class="culture__articles__pic" />
                 <h2 class="culture__articles__title">${newsAll[news].title}</h2>
                 <p class="culture__articles__description">${newsAll[news].description}</p>
           </div>
+          </a>
         </div>
     `;
-          document.getElementById("world").onclick = function () {
-            console.log("button was clicked");
-          };
+    let val = Object.values(newsAll[news])
+    console.log(val)
+    arrayVal.push(val) // to be able to access result everywhere in code
+
+
+    console.log(arrayVal)
+
+    document.querySelector(".world__articles").onclick = (e) =>{
+      for (let r = 0; r < arrayVal.length; r++ ){
+        console.log(arrayVal[r]) // 9 res
+        console.log(e.target.textContent)
+        if(arrayVal[r].includes(e.target.textContent)){
+          console.log("includes")
+          let ind = arrayVal[r].indexOf(e.target.textContent);
+          console.log(ind);
+          let value = arrayVal[r][ind];
+          console.log(value);
+          localStorage.setItem("hotNValue", value)
+        }          
+        else if(e.target.textContent == "") {
+            console.log(e.target.parentNode.children[0])
+            let imageAdr = e.target.parentNode.children[0].src // returns http://127.0.0.1:5500/images/hot-news--coffee.jpg
+            let matches = imageAdr.match(/[^/]*$/);
+            let imageName = "/images/" + matches
+            console.log(imageName)
+            if(arrayVal[r].includes(imageName)){
+              console.log("gotcha")
+              // ind = res[r].indexOf(imageName)
+              // value = res[r][ind];
+              let value = imageName;
+              console.log(value);
+              localStorage.setItem("hotNValue", value)
+            }
+        }
+
+        } 
+}
+          // document.getElementById("world").onclick = function () {
+          //   console.log("button was clicked");
+          // };
         } else if (
           newsAll[news]["hashtag"] === "health" &&
           currentUrl === "/pages/health.html"
         ) {
           result += `
         <div class="health__articles" id="health">
+          <a href="${'../pages/openedArticle.html'}">
             <div class="culture__articles__container">
               <img  src="${newsAll[news].image}" alt="${newsAll[news].alt}" class="culture__articles__pic" />
                 <h2 class="culture__articles__title">${newsAll[news].title}</h2>
                 <p class="culture__articles__description">${newsAll[news].description}</p>
           </div>
+          </a>
         </div>`;
-          document.getElementById("health").onclick = function () {
-            console.log("button was clicked");
-          };
+        let val = Object.values(newsAll[news])
+        console.log(val)
+        arrayVal.push(val) // to be able to access result everywhere in code
+    
+    
+        console.log(arrayVal)
+    
+        document.querySelector(".health__articles").onclick = (e) =>{
+          for (let r = 0; r < arrayVal.length; r++ ){
+            console.log(arrayVal[r]) // 9 res
+            console.log(e.target.textContent)
+            if(arrayVal[r].includes(e.target.textContent)){
+              console.log("includes")
+              let ind = arrayVal[r].indexOf(e.target.textContent);
+              console.log(ind);
+              let value = arrayVal[r][ind];
+              console.log(value);
+              localStorage.setItem("hotNValue", value)
+            }          
+            else if(e.target.textContent == "") {
+                console.log(e.target.parentNode.children[0])
+                let imageAdr = e.target.parentNode.children[0].src // returns http://127.0.0.1:5500/images/hot-news--coffee.jpg
+                let matches = imageAdr.match(/[^/]*$/);
+                let imageName = "/images/" + matches
+                console.log(imageName)
+                if(arrayVal[r].includes(imageName)){
+                  console.log("gotcha")
+                  // ind = res[r].indexOf(imageName)
+                  // value = res[r][ind];
+                  let value = imageName;
+                  console.log(value);
+                  localStorage.setItem("hotNValue", value)
+                }
+            }
+    
+            } 
+    }
+          // document.getElementById("health").onclick = function () {
+          //   console.log("button was clicked");
+          // };
         }
 
 
