@@ -1,22 +1,51 @@
 
 @import "/styles/culture.css";
 
+
+/*ARTICLES*/
 .politics__body{
     width: 80%;
-    border: 2px darkcyan solid;
+    /* border: 2px darkcyan solid; */
     justify-self: center;
-    margin-top: 40px;
+    margin-top: 2.5rem;
 }
 
 .politics__articles{
-    
-    border: 2px solid purple;
-    margin: 5px;
+    border: 2px solid #E88D72;
+    margin: 0.313rem;
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
-    margin: 10px 10px;
-   
-    
+    border-radius: 10px;
+}
+
+.politics__articles a{
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1547px){
+    .politics__articles{
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media screen and (max-width: 1110px){
+    .politics__articles{
+        grid-template-columns: repeat(1, auto);
+    }
+}
+
+@media screen and (max-width: 871px){
+    .politics__body{
+        margin: 0;
+    }
+}
+
+
+
+@media screen and (max-width: 413px){
+    .politics__body{
+        width: 100%;
+    }
 
 }

@@ -9,32 +9,38 @@
     <!-- <link rel="preload" href="/news.json" as="fetch" crossorigin="anonymous">
     <link rel="preload" href="script.js" as="script" /> -->
     <link rel="stylesheet" href="../styles/normalize.css" />
-    <link rel="stylesheet" type="text/css"href="../styles/health.css"/>
+    <link rel="stylesheet" type="text/css"href="../styles/health.css" />
     <script src="https://kit.fontawesome.com/86e920b6e3.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Erica+One&family=Questrial&family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <title>Good News Culture</title>
   </head>
   <body>
     <div class="main">
+      <div class="main__nav--general">
       <h1 class="main__title"><a href="/index.html"> GOOD NEWS</a></h1>
       <nav class="main__nav">
         <ul class="main__ul">
-          <li><a href="/pages/culture.html">culture</a></li>
-          <li><a href="/pages/politics.html">politics</a></li>
-          <li><a href="/pages/world.html">world</a></li>
-          <li><a href="/pages/health.html">health</a></li>
+          <li class="main__ul--li"><a href="/pages/culture.html">culture</a></li>
+          <li class="main__ul--li"><a href="/pages/politics.html">politics</a></li>
+          <li class="main__ul--li"><a href="/pages/world.html">world</a></li>
+          <li class="main__ul--li"><a href="/pages/health.html">health</a></li>
         </ul>
       </nav>
+      </div>
         <div class="health__body">
             <div class="health__articles" id="health">
-        </div>
+          </div>
       </div>
       <footer class="footer">
         <ul class="footer__ul">
-          <li><a href="#">fb</a></li>
-          <li><a href="#">twitter</a></li>
-          <li><a href="#">mail</a></li>
+          <li><a href="#"><i class="fa-brands fa-square-facebook footer__ul-contacts"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-square-twitter footer__ul-contacts"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-envelope footer__ul-contacts"></i></a></li>
         </ul>
       </footer>
+      </div>
       <script src="/scripts/articleFilter.js"></script>
   </body>
 </html>
