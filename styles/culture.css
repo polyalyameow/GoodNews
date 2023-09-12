@@ -252,7 +252,7 @@ footer{
 }
 
 
-@media screen and (max-width: 413px){
+@media screen and (max-width: 416px){
     .main__title{
         font-size: 6rem;
         line-height: 5rem;
@@ -282,4 +282,11 @@ footer{
     }
 
 
+}
+
+@media screen and (max-width: 300px){
+    .main__title{
+        font-size: 5rem;
+        line-height: 4rem;
+    }
 }
