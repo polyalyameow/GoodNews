@@ -2,8 +2,6 @@ arrayVal = [];
 res =[];
 
 
-
-
 // request to fetch data from json file
 
 let http = new XMLHttpRequest();
@@ -48,8 +46,6 @@ http.onload = function News () {
                       </div>
                   `;
 
-                  //href="${"../pages/openedArticle.html"}"
-            // console.log(news[item]);
 
             let val = Object.values(random_news)
             console.log(val)
@@ -61,13 +57,6 @@ http.onload = function News () {
            
         }
 
-        // console.log(arrayVal)
-
-        // for (v in arrayVal){
-        //   // console.log(arrayVal[v])
-        //   res.push(arrayVal[v])
-        // } 
-        // console.log(res)
 
         console.log(arrayVal)
 
@@ -84,8 +73,6 @@ http.onload = function News () {
                 console.log(imageName)
                 if(res[r].includes(imageName)){
                   console.log("gotcha")
-                  // ind = res[r].indexOf(imageName)
-                  // value = res[r][ind];
                   value = imageName;
                   console.log(value);
                   localStorage.setItem("hotNValue", value)
@@ -111,7 +98,7 @@ http.onload = function News () {
       
       
     }
-      // console.log(varCheck);
+      
       
     }
       

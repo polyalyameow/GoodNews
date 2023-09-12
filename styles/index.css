@@ -98,7 +98,6 @@ body {
 
 .articles{
     width: 95%; 
-    /* max-height: 1000px; */
     height: 100%;
     grid-area: articles;
     display: flex;

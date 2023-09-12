@@ -63,34 +63,13 @@ window.onload = function hotNews() {
             
      `; 
 
-     // href="${"../pages/openedArticle.html"}"
 
-        // console.log(data[item]);
+        
 
         let val = Object.values(data[item])
         // console.log(val)
         arrayVal.push(val)
-        // console.log(arrayVal)
-
-
-        // document.querySelector(".articles--main").onclick = (e) => {
-        //   if(x.includes(e.target.textContent)){
-        //     console.log("found: " + e.target.textContent)
-        //   } else (
-        //     console.log("not found")
-        //   )
-        //  }
-
-
-
-        //  console.log(data[item].title)
-        // window.localStorage.setItem("main-titel", data[item].title)
-
-        //     console.log(data[item].title)
-
-        //  console.log(data[item].title)
       }
-      // console.log(arrayVal)
       for (v in arrayVal){
         // console.log(arrayVal[v])
         res.push(arrayVal[v])
@@ -115,8 +94,6 @@ window.onload = function hotNews() {
             console.log(imageName)
             if(res[r].includes(imageName)){
               console.log("gotcha")
-              // ind = res[r].indexOf(imageName)
-              // value = res[r][ind];
               value = imageName;
               console.log(value);
               localStorage.setItem("hotNValue", value)

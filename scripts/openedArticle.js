@@ -15,12 +15,6 @@ let id;
  
 
 
-
-// console.log(window.localStorage.length)
-
-
-
-
 window.onload = function openedArticle(){
     Promise.all([fetch("../public/hotNews.json"), fetch("../public/news.json")])
     .then((res) => {
@@ -67,30 +61,12 @@ window.onload = function openedArticle(){
             
               }
               
-              
-              
             } else {
               console.log("not here")
               console.log(newsAll[n]);
               console.log(x)
-            }
-
-            // window.localStorage.clear();
-            ; // id of an element
+            }; 
             
-            // console.log(newsAll[n]) //each el in news array
-            // if (window.location.href.toString().includes(id)){
-            //     console.log("per")
-            // } else {
-            //     console.log("not included")
-            // }
-            
-            // if (window.location.href === ("/pages/openedArticle/" + newsAll[n]["id"] + ".html")) {
-            //     console.log("done")
-            // }
-           
-         
-            // localStorage.removeItem("hotNValue")
             
          }
         
