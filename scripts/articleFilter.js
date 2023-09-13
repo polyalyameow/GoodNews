@@ -97,7 +97,7 @@ window.onload = function fetchData() {
          } 
          else if (
           newsAll[news]["hashtag"] === "politics" &&
-          currentUrl === "/pages/politics.html"
+          currentUrl === "https://master--melodious-otter-3f6d38.netlify.app/pages/politics"
         ) {
           console.log(newsAll[news]["title"]);
           result += `
@@ -151,7 +151,7 @@ window.onload = function fetchData() {
           
         } else if (
           newsAll[news]["hashtag"] === "world" &&
-          currentUrl === "/pages/world.html"
+          currentUrl === "https://master--melodious-otter-3f6d38.netlify.app/pages/world"
         ) {
           result += `
         <div class="world__articles" id="world">
@@ -202,7 +202,7 @@ window.onload = function fetchData() {
         
         } else if (
           newsAll[news]["hashtag"] === "health" &&
-          currentUrl === "/pages/health.html"
+          currentUrl === "https://master--melodious-otter-3f6d38.netlify.app/pages/health"
         ) {
           result += `
         <div class="health__articles" id="health">
@@ -258,12 +258,12 @@ window.onload = function fetchData() {
       for (let news in newsAll) {
         if (currentUrl === "https://master--melodious-otter-3f6d38.netlify.app/pages/culture") {
           document.querySelector(".culture__articles").innerHTML = result;
-        } else if (currentUrl === "/pages/politics.html") {
+        } else if (currentUrl === "https://master--melodious-otter-3f6d38.netlify.app/pages/politics") {
           document.querySelector(".politics__articles").innerHTML = result;
-        } else if (currentUrl === "/pages/world.html") {
+        } else if (currentUrl === "https://master--melodious-otter-3f6d38.netlify.app/pages/world") {
           document.querySelector(".world__articles").innerHTML = result;
         } else if (currentUrl === "/pages/health.html") {
-          document.querySelector(".health__articles").innerHTML = result;
+          document.querySelector("https://master--melodious-otter-3f6d38.netlify.app/pages/health").innerHTML = result;
         }
       }
         
