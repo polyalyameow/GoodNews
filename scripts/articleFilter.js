@@ -10,7 +10,7 @@ window.onload = function fetchData() {
     .then((data) => {
       console.log(data);
 
-      const currentUrl = window.location.pathname;
+      const currentUrl = window.location.href;
       console.log(currentUrl)
       let result = "";
 
