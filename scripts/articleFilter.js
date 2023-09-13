@@ -3,7 +3,7 @@ let res = [];
 
 
 window.onload = function fetchData() {
-  Promise.all([fetch("/public/hotNews.json"), fetch("/public/news.json")])
+  Promise.all([fetch("../../public/hotNews.json"), fetch("../../public/news.json")])
     .then((res) => {
       return Promise.all(res.map((res) => res.json()));
     })
