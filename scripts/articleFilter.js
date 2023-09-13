@@ -255,7 +255,7 @@ window.onload = function fetchData() {
       }
 
       for (let news in newsAll) {
-        if (currentUrl === "/pages/culture.html") {
+        if (currentUrl === "https://master--melodious-otter-3f6d38.netlify.app/pages/culture") {
           document.querySelector(".culture__articles").innerHTML = result;
         } else if (currentUrl === "/pages/politics.html") {
           document.querySelector(".politics__articles").innerHTML = result;
