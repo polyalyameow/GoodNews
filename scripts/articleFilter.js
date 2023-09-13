@@ -11,6 +11,7 @@ window.onload = function fetchData() {
       console.log(data);
 
       const currentUrl = window.location.pathname;
+      console.log(currentUrl)
       let result = "";
 
       let modalText = "";
