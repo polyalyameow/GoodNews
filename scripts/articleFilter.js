@@ -262,8 +262,8 @@ window.onload = function fetchData() {
           document.querySelector(".politics__articles").innerHTML = result;
         } else if (currentUrl === "https://master--melodious-otter-3f6d38.netlify.app/pages/world") {
           document.querySelector(".world__articles").innerHTML = result;
-        } else if (currentUrl === "/pages/health.html") {
-          document.querySelector("https://master--melodious-otter-3f6d38.netlify.app/pages/health").innerHTML = result;
+        } else if (currentUrl === "https://master--melodious-otter-3f6d38.netlify.app/pages/health") {
+          document.querySelector("health__articles").innerHTML = result;
         }
       }
         
