@@ -42,7 +42,7 @@ window.onload = function fetchData() {
 
         if (
           newsAll[news]["hashtag"] === "culture" &&
-          currentUrl === "/pages/culture.html"
+          currentUrl === "https://master--melodious-otter-3f6d38.netlify.app/pages/culture"
         ) {
           
           result += `
