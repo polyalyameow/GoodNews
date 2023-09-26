@@ -187,7 +187,8 @@ body {
     width: 6.25rem;
     height: 1.875rem;
     border-radius: 0.313rem;
-    border: none
+    border: none;
+    cursor: pointer;
 }
 
 .btns button i{
