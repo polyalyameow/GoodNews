@@ -43,7 +43,7 @@ window.onload = function fetchData() {
 
         if (
           newsAll[news]["hashtag"] === "culture" &&
-          currentUrl === "https://master--melodious-otter-3f6d38.netlify.app/pages/culture"
+          currentUrl === "https://melodious-otter-3f6d38.netlify.app/pages/culture"
         ) {
           
           result += `
@@ -97,7 +97,7 @@ window.onload = function fetchData() {
          } 
          else if (
           newsAll[news]["hashtag"] === "politics" &&
-          currentUrl === "https://master--melodious-otter-3f6d38.netlify.app/pages/politics"
+          currentUrl === "https://melodious-otter-3f6d38.netlify.app/pages/politics"
         ) {
           console.log(newsAll[news]["title"]);
           result += `
@@ -151,7 +151,7 @@ window.onload = function fetchData() {
           
         } else if (
           newsAll[news]["hashtag"] === "world" &&
-          currentUrl === "https://master--melodious-otter-3f6d38.netlify.app/pages/world"
+          currentUrl === "https://melodious-otter-3f6d38.netlify.app/pages/world"
         ) {
           result += `
         <div class="world__articles" id="world">
@@ -202,7 +202,7 @@ window.onload = function fetchData() {
         
         } else if (
           newsAll[news]["hashtag"] === "health" &&
-          currentUrl === "https://master--melodious-otter-3f6d38.netlify.app/pages/health"
+          currentUrl === "https://melodious-otter-3f6d38.netlify.app/pages/health"
         ) {
           result += `
         <div class="health__articles" id="health">
